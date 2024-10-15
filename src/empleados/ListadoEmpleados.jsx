@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 export default function ListadoEmpleados() {
     const [empleados, setEmpleados] = useState([]);
     const [cargando, setCargando] = useState(true);
@@ -68,27 +69,30 @@ export default function ListadoEmpleados() {
             <table className="table table-striped table-hover align-middle">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Departamento</th>
-                        <th>Salario</th>
-                        <th>Estado</th>
-                        <th>Opciones</th>
+                        <th className="text-center">ID</th>
+                        <th className="text-center">Nombre</th>
+                        <th className="text-center">Departamento</th>
+                        <th className="text-center">Salario</th>
+                        <th className="text-center">Estado</th>
+                        <th className="text-center">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     {empleados.map((empleado, indice) => (
                         <tr key={indice}>
-                            <td>{empleado.id}</td>
-                            <td>{empleado.nombre}</td>
-                            <td>{empleado.departamento}</td>
-                            <td>{empleado.salario.toLocaleString('es-CO')}</td>
-                            <td>{empleado.estado ? 'Activo' : 'Inactivo'}</td>
-                            <button
-                                className={`btn ${empleado.estado ? 'btn-danger' : 'btn-success'}`}
-                                onClick={() => toggleEstado(empleado.id)}>
-                                {empleado.estado ? 'Desactivar' : 'Activar'}
-                            </button>
+                            <td className="text-center">{empleado.id}</td>
+                            <td className="text-center">{empleado.nombre}</td>
+                            <td className="text-center">{empleado.nombreDepartamento}</td>
+                            <td className="text-center">{empleado.salario.toLocaleString('es-CO')}</td>
+                            <td className="text-center">{empleado.estado ? 'Activo' : 'Inactivo'}</td>
+                            <div className="text-center">
+                                <button
+                                    className={`btn ${empleado.estado ? 'btn-danger' : 'btn-success'} me-2`}
+                                    onClick={() => toggleEstado(empleado.id)}>
+                                    {empleado.estado ? 'Desactivar' : 'Activar'}
+                                </button>
+                                <Link className="btn btn-info" to={`/empleados/editar/${empleado.id}`}>Editar</Link>
+                            </div>
                         </tr>
                     ))}
                 </tbody>

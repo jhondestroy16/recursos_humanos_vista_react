@@ -1,57 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
-
-export default function AgregarEmpleado() {
+export default function EditarEmpleado() {
     let navegacion = useNavigate();
-
-    const [departamentos, setDepartamentos] = useState([]);
+    const { id } = useParams();
     const [empleado, setEmpleado] = useState({
         nombre: '',
-        departamento: {
-            id: '',
-            nombre: '' // Puedes agregar más campos si los necesitas
-        },
+        departamento: '',
         salario: '',
     });
-
+    const url_base = 'http://127.0.0.1:8080/rh-app/empleados';
     const [cargando, setCargando] = useState(false);
     const [error, setError] = useState('');
 
     const { nombre, departamento, salario } = empleado;
 
-    const onInputChange = (e) => {
-        if (e.target.name === 'departamento') {
-            const selectedDepartamento = departamentos.find(dept => dept.id === parseInt(e.target.value));
-            setEmpleado({
-                ...empleado,
-                departamento: selectedDepartamento || { id: '', nombre: '' }, // Asegúrate de que esté definido
-            });
-        } else {
-            setEmpleado({ ...empleado, [e.target.name]: e.target.value });
-        }
-    };
-
     useEffect(() => {
-        const fetchDepartamentos = async () => {
-            try {
-                const response = await axios.get('http://127.0.0.1:8080/rh-app/departamentos');
-                setDepartamentos(response.data);
-                setCargando(false);
-            } catch (err) {
-                setError('Error al cargar los departamentos', err);
-                setCargando(false);
-            }
-        };
-
-        fetchDepartamentos();
-    }, []);
+        cargarEmpleado();
+    },[])
+    const cargarEmpleado = async () => {
+        const resultado = await axios.get(`${url_base}/${id}`)
+        setEmpleado(resultado.data);
+    }
+    const onInputChange = (e) => {
+        setEmpleado({ ...empleado, [e.target.name]: e.target.value });
+    };
 
     const onSubmit = async (e) => {
         e.preventDefault();
 
-        if (!nombre || !departamento.id || !salario) {
+        if (!nombre || !departamento || !salario) {
             Swal.fire('Error', 'Todos los campos son obligatorios.', 'error');
             return;
         }
@@ -63,7 +42,7 @@ export default function AgregarEmpleado() {
         try {
             const result = await Swal.fire({
                 title: '¿Estás seguro?',
-                text: '¿Desea agregar un empleado?',
+                text: '¿Desea editar un empleado?',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Sí',
@@ -72,14 +51,14 @@ export default function AgregarEmpleado() {
 
             if (result.isConfirmed) {
                 setCargando(true);
-                await axios.post("http://127.0.0.1:8080/rh-app/empleados/save", empleado);
-                Swal.fire('¡Éxito!', 'Se agregó el empleado correctamente.', 'success');
-                navegacion('/empleados');
+                await axios.post("http://127.0.0.1:8080/rh-app/empleados/save", empleado,id);
+                Swal.fire('¡Éxito!', 'Se edito el empleado correctamente.', 'success');
+                navegacion('/');
             }
         } catch (err) {
             console.error(err);
-            setError('Hubo un problema al agregar el empleado.');
-            Swal.fire('Error', 'No se pudo agregar el empleado.', 'error');
+            setError('Hubo un problema al editar el empleado.');
+            Swal.fire('Error', 'No se pudo editar el empleado.', 'error');
         } finally {
             setCargando(false);
         }
@@ -88,7 +67,7 @@ export default function AgregarEmpleado() {
     return (
         <div className="container">
             <div className="text-center mb-4">
-                <h2>Agregar Empleados</h2>
+                <h2>Editar Empleados</h2>
             </div>
             {error && <div className="alert alert-danger">{error}</div>}
             <form onSubmit={onSubmit}>
@@ -106,20 +85,15 @@ export default function AgregarEmpleado() {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="departamento" className="form-label">Departamento:</label>
-                    <select
+                    <input
+                        type="text"
                         className="form-control"
                         id="departamento"
                         name="departamento"
-                        value={departamento.id}
+                        value={departamento}
                         onChange={onInputChange}
-                        required>
-                        <option value="">Seleccione un departamento</option>
-                        {departamentos.map((dept) => (
-                            <option key={dept.id} value={dept.id}>
-                                {dept.nombre}
-                            </option>
-                        ))}
-                    </select>
+                        required
+                    />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="salario" className="form-label">Sueldo:</label>
@@ -134,9 +108,7 @@ export default function AgregarEmpleado() {
                     />
                 </div>
                 <div className="text-center">
-                    <button type="submit" className="btn btn-warning btn-sm me-3" disabled={cargando}>
-                        {cargando ? 'Agregando...' : 'Agregar'}
-                    </button>
+                    <button type="submit" className="btn btn-warning btn-sm me-3" disabled={cargando}> {cargando ? 'Editando...' : 'Editar'}</button>
                     <a href="/" className="btn btn-info btn-sm">Volver</a>
                 </div>
             </form>
