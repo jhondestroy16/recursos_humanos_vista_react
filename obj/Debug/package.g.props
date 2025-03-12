@@ -16,6 +16,7 @@
     <PackageJsonDependenciesReactBootstrap Condition="$(PackageJsonDependenciesReactBootstrap) == ''">^2.10.5</PackageJsonDependenciesReactBootstrap>
     <PackageJsonDependenciesReactDom Condition="$(PackageJsonDependenciesReactDom) == ''">^18.3.1</PackageJsonDependenciesReactDom>
     <PackageJsonDependenciesReactRouterDom Condition="$(PackageJsonDependenciesReactRouterDom) == ''">^6.27.0</PackageJsonDependenciesReactRouterDom>
+    <PackageJsonDependenciesReactSelect Condition="$(PackageJsonDependenciesReactSelect) == ''">^5.8.1</PackageJsonDependenciesReactSelect>
     <PackageJsonDependenciesSweetalert2 Condition="$(PackageJsonDependenciesSweetalert2) == ''">^11.14.3</PackageJsonDependenciesSweetalert2>
     <PackageJsonDevdependenciesEslintJs Condition="$(PackageJsonDevdependenciesEslintJs) == ''">^9.11.1</PackageJsonDevdependenciesEslintJs>
     <PackageJsonDevdependenciesTypesReact Condition="$(PackageJsonDevdependenciesTypesReact) == ''">^18.3.10</PackageJsonDevdependenciesTypesReact>

@@ -1,0 +1,100 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\laragon\\www\\recursos_humanos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E81F490E-EC50-4CAB-9A4B-CC441FE2CABC}|recursos_humanos.esproj|c:\\laragon\\www\\recursos_humanos\\src\\plantilla\\navegacion.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E81F490E-EC50-4CAB-9A4B-CC441FE2CABC}|recursos_humanos.esproj|solutionrelative:src\\plantilla\\navegacion.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E81F490E-EC50-4CAB-9A4B-CC441FE2CABC}|recursos_humanos.esproj|c:\\laragon\\www\\recursos_humanos\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E81F490E-EC50-4CAB-9A4B-CC441FE2CABC}|recursos_humanos.esproj|solutionrelative:src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E81F490E-EC50-4CAB-9A4B-CC441FE2CABC}|recursos_humanos.esproj|c:\\laragon\\www\\recursos_humanos\\src\\login\\login.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E81F490E-EC50-4CAB-9A4B-CC441FE2CABC}|recursos_humanos.esproj|solutionrelative:src\\login\\login.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E81F490E-EC50-4CAB-9A4B-CC441FE2CABC}|recursos_humanos.esproj|c:\\laragon\\www\\recursos_humanos\\src\\empleados\\agregarempleado.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E81F490E-EC50-4CAB-9A4B-CC441FE2CABC}|recursos_humanos.esproj|solutionrelative:src\\empleados\\agregarempleado.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Navegacion.jsx",
+              "DocumentMoniker": "C:\\laragon\\www\\recursos_humanos\\src\\plantilla\\Navegacion.jsx",
+              "RelativeDocumentMoniker": "src\\plantilla\\Navegacion.jsx",
+              "ToolTip": "C:\\laragon\\www\\recursos_humanos\\src\\plantilla\\Navegacion.jsx*",
+              "RelativeToolTip": "src\\plantilla\\Navegacion.jsx*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-18T02:22:19.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.jsx",
+              "DocumentMoniker": "C:\\laragon\\www\\recursos_humanos\\src\\App.jsx",
+              "RelativeDocumentMoniker": "src\\App.jsx",
+              "ToolTip": "C:\\laragon\\www\\recursos_humanos\\src\\App.jsx",
+              "RelativeToolTip": "src\\App.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-18T02:21:02.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.jsx",
+              "DocumentMoniker": "C:\\laragon\\www\\recursos_humanos\\src\\login\\Login.jsx",
+              "RelativeDocumentMoniker": "src\\login\\Login.jsx",
+              "ToolTip": "C:\\laragon\\www\\recursos_humanos\\src\\login\\Login.jsx",
+              "RelativeToolTip": "src\\login\\Login.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-18T02:18:34.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AgregarEmpleado.jsx",
+              "DocumentMoniker": "C:\\laragon\\www\\recursos_humanos\\src\\empleados\\AgregarEmpleado.jsx",
+              "RelativeDocumentMoniker": "src\\empleados\\AgregarEmpleado.jsx",
+              "ToolTip": "C:\\laragon\\www\\recursos_humanos\\src\\empleados\\AgregarEmpleado.jsx",
+              "RelativeToolTip": "src\\empleados\\AgregarEmpleado.jsx",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAQwK4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2024-10-16T02:04:31.969Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

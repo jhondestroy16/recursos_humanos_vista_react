@@ -9,6 +9,9 @@
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="src\login\ReactComponent.jsx" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include=".bin\git.cmd" />
     <None Include=".bin\node.cmd" />
     <None Include=".bin\npm.cmd" />
